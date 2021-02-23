@@ -1,4 +1,5 @@
 import { Controller, Get, Post, Put, Delete, Body} from '@nestjs/common';
+import {CreateTaskDto} from './dto/create-task.dto';
 
 //let to create a new route for the project
 
@@ -11,7 +12,7 @@ export class TasksController {
     }
 
     @Post()
-    createTask(@Body() task): string {
+    createTask(@Body() task: CreateTaskDto): string {
         console.log(task)
         return 'Creating a Task';
     }
