@@ -5,15 +5,13 @@ import { Model } from "mongoose";
 
 @Injectable()
 export class TasksService {
-    constructor(@InjectModel('Task') private taskModel : Model<Task>){}
+    constructor(@InjectModel('Task') private taskMo : Model<Task>){}
 
     async getTasks(){
-        return await this.taskModel.find()
+        return await this.taskMo.find()
     }
 
-    async getTask(id : number){
-        return await this.taskModel.findById(id)
+    async getTask(id : string){
+        return await this.taskMo.findById(id)
     }
-
-    asyn
 }
