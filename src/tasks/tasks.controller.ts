@@ -8,10 +8,15 @@ import { TasksService } from './tasks.service';
 export class TasksController {
 
     constructor(private taskService : TasksService){}
-
+// Return an array of tasks
     @Get()
     getTasks(): Task[] {
         return this.taskService.getTasks();
+    }
+//Return a Task
+    @Get(':taskId')
+    getTask(@Param('taskId') taskId){
+        return this.taskService.getTask(parseInt(taskId));
     }
 
     @Post()
