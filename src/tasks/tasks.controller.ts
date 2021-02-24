@@ -10,7 +10,7 @@ export class TasksController {
     constructor(private taskService : TasksService){}
 // Return an array of tasks
     @Get()
-    getTasks(): Task[] {
+    getTasks(): Promise<Task[]> {
         return this.taskService.getTasks();
     }
 //Return a Task
